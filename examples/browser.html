@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Color Tween Demo</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #ffa500;
+      }
+      button {
+        font-size: 1.4em;
+        padding: 1em 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, Color Tweens!</h1>
+    <button onclick="makeItSo()">Show Me</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../dist/color-tween.min.js"></script>
+    <script>
+      var tween;
+      function makeItSo(){
+        tween = new ColorTween('#ffa500', '#40e0d0')
+                      .duration(3000)
+                      .easing('linear')
+                      .onUpdate(update)
+                      .onEnd(function(){
+                        console.log('All Done!');
+                      })
+                      .start(animate);
+      }
+
+      function animate(time) {
+          if (tween.update()) {
+            requestAnimationFrame(animate);
+          }
+      }
+
+      function update(color) {
+        $('body').css('background-color', color.hex())
+      }
+
+    </script>
+  </body>
+</html>

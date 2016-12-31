@@ -1,0 +1,25 @@
+{
+  "name": "color-tween",
+  "version": "0.1.0",
+  "description": "Tween between any two colors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanguir/color-tween.git"
+  },
+  "author": "Alan Languirand @alanguir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alanguir/color-tween/issues"
+  },
+  "homepage": "https://github.com/alanguir/color-tween#readme",
+  "dependencies": {
+    "color": "^1.0.3"
+  },
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  }
+}
