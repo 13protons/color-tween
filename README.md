@@ -42,10 +42,16 @@ var tween = new ColorTween('#000', '#FFF')
 
 // node:
 
-function animate(){
-  if(tween.update()) {
-    requestAnimationFrame(animate)
-  }
+function animate() {
+    if (tween.update()) {
+      setTimeout(animate, 50);
+    }
+
+    // or if you want super smooth by very chatty updates:
+
+    // if (tween.update()) {
+    //   setImmediate(animate);
+    // }
 }
 
 ```
